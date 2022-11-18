@@ -12,7 +12,6 @@ public class Main {
 
         Scanner getInput = new Scanner(System.in);
         String input = getInput.nextLine();
-        System.out.println(input);
 
         if (Objects.equals(input, "1"))
         {

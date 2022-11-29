@@ -4,8 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
         //declarations
-        String playAgain;
-        String playHard;
+        String playAgain= "";
+        String playHard= "";
+        String playerName= "";
         Scanner getGuess = new Scanner(System.in);
         Scanner getInput = new Scanner(System.in);
         Scanner replay = new Scanner(System.in);
@@ -13,9 +14,17 @@ public class Main {
 
         //Get player name
         System.out.println("Hello! what is your name?");
-        String playerName = getInput.nextLine();
+        try {
+            playerName = getInput.nextLine();
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
         System.out.println("Would you like to play hard mode? (y or n)");
-        playHard = hardMode.nextLine();
+        try {
+            playHard = hardMode.nextLine();
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
 
         //replay check
         do{
@@ -23,6 +32,7 @@ public class Main {
                     do {
                         //Generate easy number
                         RandomNumber number = new RandomNumber();
+                        //Start game dialog
                         startDialog(playerName, number);
                         int i;
 
@@ -32,11 +42,16 @@ public class Main {
                         //If statement for player not guessing correctly in 6 tries
                         lost(number, i);
 
-                        playAgain = playAgain(replay);
+                        playAgain = Main.playAgain(replay);
 
                         if (playAgain.equals("y")){
                             System.out.println("Would you like a harder number? (y or n)");
-                            playHard = hardMode.nextLine();
+                            //Try-Catch for hard mode prompt
+                            try {
+                                playHard = hardMode.nextLine();
+                            } catch (Exception e){
+                                System.out.println(e.getMessage());
+                            }
                         }
 
                     } while (playAgain.equals("y") && playHard.equals("n"));
@@ -52,11 +67,15 @@ public class Main {
                     i = hardGuess(getGuess, playerName, number);
                     lostHard(number, i);
 
-                    playAgain = playAgain(replay);
+                    playAgain = Main.playAgain(replay);
 
                     if (playAgain.equals("y")){
                          System.out.println("Would you like continue playing hard mode? (y or n)");
-                         playHard = hardMode.nextLine();
+                        try {
+                            playHard = hardMode.nextLine();
+                        } catch (Exception e){
+                            System.out.println(e.getMessage());
+                        }
                     }
 
                 }   while (playAgain.equals("y") && playHard.equals("y"));
@@ -66,9 +85,13 @@ public class Main {
 }
 
     private static String playAgain(Scanner replay) {
-        String playAgain;
+        String playAgain="";
         System.out.println("Would you like to play again? (y or n)");
-        playAgain = replay.nextLine();
+        try {
+            playAgain = replay.nextLine();
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
         return playAgain;
     }
 
@@ -97,10 +120,14 @@ public class Main {
     }
 
     private static int hardGuess(Scanner getGuess, String playerName, HarderNumber number) {
-        int guess;
+        int guess=0;
         int i;
         for(i=1; i<7; i++){
-            guess = getGuess.nextInt();
+            try{
+                guess = getGuess.nextInt();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
 
             if (guess == number.genNumber) {
                 System.out.println("Good job, " + playerName + "! You guessed my number in " + i + " guesses!");
@@ -120,10 +147,14 @@ public class Main {
     }
 
     private static int guess(Scanner getGuess, String playerName, RandomNumber number) {
-        int guess;
+        int guess=0;
         int i;
         for(i=1; i<7; i++){
+            try{
             guess = getGuess.nextInt();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
 
             if (guess == number.genNumber) {
                 System.out.println("Good job, " + playerName + "! You guessed my number in " + i + " guesses!");

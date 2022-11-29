@@ -86,7 +86,7 @@ public class Dialog {
         String i5 = "You recognize it from one of your textbooks, it is the fabled Dragon's Fang Blade.";
         String i6 = "It's told to be fatal to dragons with even one cut, due to the toxic nature of the metal it's made from.";
         String i7 = "You keep going until you reach the mouth of the cave. The air is foul.";
-        return i1 + "\n" + i2 + "\n" + i3 + "\n" + i4 + "\n" + i5 + "\n" + i6;
+        return i1 + "\n" + i2 + "\n" + i3 + "\n" + i4 + "\n" + i5 + "\n" + i6 + "\n" + i7;
     }
 
     public static String straight() {

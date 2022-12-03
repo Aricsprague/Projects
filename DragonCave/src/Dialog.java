@@ -30,14 +30,15 @@ public class Dialog {
         String i6 = "\"The dragon lives on the top of mount Kryzaen'Boor.\" The guard says.";
         String i7 = "\"He is a trickster, and may have laid traps and puzzles to the entrance of his cave.\" Says another.";
         String i8 = "You set out on a cool September morning, ready to face the dragon";
-        return i1 + "\n" + i2 + "\n" + i3 + "\n" + i4 + "\n" + i5 + "\n" + i6 + "\n" + i7 + "\n" + i8;
+        //String i9 = "Press ENTER to continue...";
+        return i1 + "\n" + i2 + "\n" + i3 + "\n" + i4 + "\n" + i5 + "\n" + i6 + "\n" + i7 + "\n" + i8/* + "\n" + i9*/;
     }
 
     public static String journey() {
-        String i1 = ".\n.\n.\nAfter 11 days of riding, your butt is sore, you smell worse than your horse, and you feel like you could sleep for a month.";
+        String i1 = "After 11 days of riding, your butt is sore, you smell worse than your horse, and you feel like you could sleep for a month.";
         String i2 = "But with the mountain standing tall before you, all you can think is \"This is where the hard part starts.\"";
         String i3 = "It's about 6 in the evening. The top of the mountain is covered by clouds. You decide to rest for the night.";
-        String i4 = ".\n.\n.\nYou wake up suddenly, you can hear a kind of shuffling dragging noise.";
+        String i4 = ".\nYou wake up suddenly, you can hear a kind of shuffling dragging noise.";
         String i5 = "You're not sure what, if anything, is out there.";
         String i6 = "\"Should i go INVESTIGATE? Or should I IGNORE it and go back to sleep? I have a long day tomorrow.\" You think.";
         return i1 + "\n" + i2 + "\n" + i3 + "\n" + i4 + "\n" + i5 + "\n" + i6;
@@ -64,8 +65,8 @@ public class Dialog {
     }
 
     public static String mountain() {
-        String i1 = ".\n.\n.\n You look at the mountain, it's a tough climb but you can handle it.";
-        String i2 = "You start making your way up the small path";
+        String i1 = ".\nYou're at the mountain.";
+        String i2 = "You start making your way up a small path";
         String i3 = "You see 3 paths in front of you, one going LEFT, one RIGHT, and the other STRAIGHT.";
         return i1 + "\n" + i2 + "\n" + i3;
     }
@@ -73,9 +74,8 @@ public class Dialog {
     public static String left() {
         String i1 = "You go down the path to the left.";
         String i2 = "After walking for a minute, the path drops off.";
-        String i3 = "seeing it's impassable, you turn around and go back";
-        String i4 = "You see 3 paths in front of you, one going LEFT, one RIGHT, and the other STRAIGHT.";
-        return i1 + "\n" + i2 + "\n" + i3 + "\n" + i4;
+        String i3 = "Seeing, it's impossible, you turn back. You'll have to take the STRAIGHT or RIGHT path.";
+        return i1 + "\n" + i2 + "\n" + i3;
     }
 
     public static String right() {
@@ -186,7 +186,8 @@ public class Dialog {
         String i5 = "Despite your attempt to resist you do as he says.";
         String i6 = "As you lay dying he laughs.";
         String i7 = "\"Prepare my horse! I think I fancy a visit to the neighboring kingdoms.\"";
-        return i1 + "\n" + i2 + "\n" + i3 + "\n" + i4 + "\n" + i5 + "\n" + i6 + "\n" + i7;
+        String i8 = "GAME OVER!";
+        return i1 + "\n" + i2 + "\n" + i3 + "\n" + i4 + "\n" + i5 + "\n" + i6 + "\n" + i7 + "\n" + i8;
     }
 
     public static String take() {
@@ -202,7 +203,8 @@ public class Dialog {
         String i10 = "The king follows your command, killing himself.";
         String i11 = "\"It's time for a new king to rule\" you sit on the throne, the guards kneel, knowing theres nothing they can do.";
         String i12 = "\"I think I should visit with some of our rival kings. we should talk about...... Peace..\"";
-        return i1 + "\n" + i2 + "\n" + i3 + "\n" + i4 + "\n" + i5 + "\n" + i6 + "\n" + i7 + "\n" + i8 + "\n" + i9 + "\n" + i10 + "\n" + i11 + "\n" + i12;
+        String i13 = "THE END!";
+        return i1 + "\n" + i2 + "\n" + i3 + "\n" + i4 + "\n" + i5 + "\n" + i6 + "\n" + i7 + "\n" + i8 + "\n" + i9 + "\n" + i10 + "\n" + i11 + "\n" + i12 + "\n" + i13;
     }
 
     public static String reject() {
@@ -223,6 +225,7 @@ public class Dialog {
         String i9 = "You hand the amulet back to the dragon who says, \"you are now free to live in peace.\" He flies away.";
         String i10 = "The kings counsel - who'd been trying to overthrow him before he acquired the amulet - approach you.";
         String i11 = "\"What shall we do now, sire?\"";
-        return i1 + "\n" + i2 + "\n" + i3 + "\n" + i4 + "\n" + i5 + "\n" + i6 + "\n" + i7 + "\n" + i8 + "\n" + i9 + "\n" + i10 + "\n" + i11;
+        String i12 = "\nTHE END!";
+        return i1 + "\n" + i2 + "\n" + i3 + "\n" + i4 + "\n" + i5 + "\n" + i6 + "\n" + i7 + "\n" + i8 + "\n" + i9 + "\n" + i10 + "\n" + i11 + "\n" + i12;
     }
 }

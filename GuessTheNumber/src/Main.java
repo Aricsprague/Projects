@@ -1,5 +1,10 @@
 import java.util.Scanner;
 public class Main {
+    static Scanner getGuess = new Scanner(System.in);
+    static Scanner getInput = new Scanner(System.in);
+    static Scanner hardMode = new Scanner(System.in);
+    static Scanner replay = new Scanner(System.in);
+    static String playAgain;
 
 
     public static void main(String[] args) {
@@ -7,10 +12,6 @@ public class Main {
         String playAgain= "";
         String playHard= "";
         String playerName= "";
-        Scanner getGuess = new Scanner(System.in);
-        Scanner getInput = new Scanner(System.in);
-        Scanner replay = new Scanner(System.in);
-        Scanner hardMode = new Scanner(System.in);
 
         //Get player name
         System.out.println("Hello! what is your name?");
@@ -42,7 +43,7 @@ public class Main {
                         //If statement for player not guessing correctly in 6 tries
                         lost(number, i);
 
-                        playAgain = Main.playAgain(replay);
+                        playAgain = playAgain("");
 
                         if (playAgain.equals("y")){
                             System.out.println("Would you like a harder number? (y or n)");
@@ -67,7 +68,7 @@ public class Main {
                     i = hardGuess(getGuess, playerName, number);
                     lostHard(number, i);
 
-                    playAgain = Main.playAgain(replay);
+                    playAgain = playAgain("");
 
                     if (playAgain.equals("y")){
                          System.out.println("Would you like continue playing hard mode? (y or n)");
@@ -84,14 +85,9 @@ public class Main {
         } while (playAgain.equals("y"));
 }
 
-    private static String playAgain(Scanner replay) {
-        String playAgain="";
+    protected static String playAgain(String x) {
         System.out.println("Would you like to play again? (y or n)");
-        try {
-            playAgain = replay.nextLine();
-        } catch (Exception e){
-            System.out.println(e.getMessage());
-        }
+        playAgain = replay.nextLine();
         return playAgain;
     }
 
@@ -119,7 +115,7 @@ public class Main {
         }
     }
 
-    private static int hardGuess(Scanner getGuess, String playerName, HarderNumber number) {
+    public static int hardGuess(Scanner getGuess, String playerName, HarderNumber number) {
         int guess=0;
         int i;
         for(i=1; i<7; i++){
@@ -146,7 +142,7 @@ public class Main {
         return i;
     }
 
-    private static int guess(Scanner getGuess, String playerName, RandomNumber number) {
+    public static int guess(Scanner getGuess, String playerName, RandomNumber number) {
         int guess=0;
         int i;
         for(i=1; i<7; i++){
